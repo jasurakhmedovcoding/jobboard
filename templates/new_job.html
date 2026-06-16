@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="form-container">
+    <h2>Post a new job</h2>
+
+    <form method="POST">
+        <label>Job title</label>
+        <input type="text" name="title" placeholder="e.g. Senior Python Developer" required>
+
+        <label>Company</label>
+        <input type="text" name="company" required>
+
+        <label>Location</label>
+        <input type="text" name="location" placeholder="e.g. Remote, Worldwide">
+
+        <label>Salary</label>
+        <input type="text" name="salary" placeholder="e.g. $5,000 - $6,000/month">
+
+        <label>Category</label>
+        <select name="category">
+            <option value="engineering">Engineering</option>
+            <option value="design">Design</option>
+            <option value="marketing">Marketing</option>
+            <option value="product">Product</option>
+        </select>
+
+        <label>Job description</label>
+        <textarea name="description" rows="8" required></textarea>
+
+        <button type="submit" class="btn btn-primary">Post job</button>
+    </form>
+</div>
+
+{% endblock %}

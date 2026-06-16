@@ -1,0 +1,97 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+    color: #1a1a2e;
+    line-height: 1.6;
+}
+
+nav {
+    background: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.logo { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: #4361ee; }
+.nav-links { display: flex; align-items: center; gap: 1.2rem; }
+.nav-links a { text-decoration: none; color: #495057; }
+
+main { max-width: 1000px; margin: 0 auto; padding: 2rem 1rem; }
+
+.btn { padding: 0.5rem 1.2rem; border-radius: 6px; border: none;
+       cursor: pointer; font-size: 0.95rem; text-decoration: none; }
+.btn-primary { background: #4361ee; color: white; }
+.btn-primary:hover { background: #3451d1; }
+
+.hero { text-align: center; padding: 3rem 1rem 2rem; }
+.hero h1 { font-size: 2rem; margin-bottom: 1.5rem; }
+
+.search-form { display: flex; gap: 0.8rem; max-width: 600px;
+               margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+.search-form input, .search-form select {
+    padding: 0.6rem 1rem; border: 1px solid #dee2e6;
+    border-radius: 6px; font-size: 0.95rem; }
+.search-form input { flex: 1; min-width: 200px; }
+
+.jobs-grid { display: grid;
+             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+             gap: 1.2rem; margin-top: 1rem; }
+
+.job-card { background: white; border-radius: 10px; padding: 1.4rem;
+            border: 1px solid #e9ecef; text-decoration: none; color: inherit;
+            transition: box-shadow 0.2s; display: block; }
+.job-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
+.job-card-header { display: flex; justify-content: space-between;
+                   align-items: flex-start; gap: 0.5rem; margin-bottom: 0.5rem; }
+.job-card h3 { font-size: 1rem; color: #1a1a2e; }
+.company { font-weight: 600; color: #4361ee; margin-bottom: 0.25rem; }
+.location, .posted-by { font-size: 0.85rem; color: #6c757d; }
+.salary { color: #2d6a4f; font-weight: 600; font-size: 0.9rem; }
+
+.category-badge { background: #e7f5ff; color: #1971c2; font-size: 0.75rem;
+                  padding: 0.2rem 0.6rem; border-radius: 20px; white-space: nowrap; }
+
+.auth-container, .form-container {
+    max-width: 420px; margin: 3rem auto; background: white;
+    padding: 2rem; border-radius: 12px; border: 1px solid #e9ecef; }
+.auth-container h2, .form-container h2 { margin-bottom: 1.5rem; }
+
+form label { display: block; margin-bottom: 0.3rem;
+             font-size: 0.9rem; font-weight: 500; margin-top: 1rem; }
+form input, form select, form textarea {
+    width: 100%; padding: 0.6rem 0.9rem;
+    border: 1px solid #dee2e6; border-radius: 6px;
+    font-size: 0.95rem; font-family: inherit; }
+form button { margin-top: 1.5rem; width: 100%; padding: 0.75rem; }
+
+.error { background: #fff5f5; color: #c92a2a; padding: 0.75rem 1rem;
+         border-radius: 6px; margin-bottom: 1rem; border: 1px solid #ffc9c9; }
+
+.job-detail { background: white; padding: 2rem; border-radius: 12px;
+              border: 1px solid #e9ecef; max-width: 700px; margin: 0 auto; }
+.job-detail-header { display: flex; justify-content: space-between;
+                     align-items: center; margin-bottom: 1.2rem; }
+.job-detail h1 { font-size: 1.6rem; }
+.job-meta { background: #f8f9fa; padding: 1rem; border-radius: 8px;
+            margin-bottom: 1.5rem; }
+.job-meta p { margin-bottom: 0.4rem; }
+.job-description { margin-bottom: 2rem; }
+.job-description h3 { margin-bottom: 0.75rem; }
+.apply-section { border-top: 1px solid #e9ecef; padding-top: 1.5rem; }
+.apply-section h3 { margin-bottom: 1rem; }
+
+.empty { color: #6c757d; padding: 2rem 0; }
+
+.flash-messages { max-width: 1000px; margin: 1rem auto 0; padding: 0 1rem; }
+.flash { padding: 0.75rem 1rem; border-radius: 6px; margin-bottom: 0.5rem; }
+.flash-error { background: #fff5f5; color: #c92a2a; border: 1px solid #ffc9c9; }
+.flash-success { background: #ebfbee; color: #2b8a3e; border: 1px solid #b2f2bb; }
+
+
+.checkbox-label { display: flex; align-items: center; gap: 0.4rem;
+                   font-size: 0.9rem; white-space: nowrap; }
+.checkbox-label input { width: auto; }

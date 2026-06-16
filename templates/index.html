@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="hero">
+    <h1>Find your next remote job</h1>
+    <form action="/search" method="GET" class="search-form">
+    <input type="text" name="q" placeholder="Search jobs, companies..." value="{{ query or '' }}">
+    <select name="category">
+        <option value="">All categories</option>
+        <option value="engineering">Engineering</option>
+        <option value="design">Design</option>
+        <option value="marketing">Marketing</option>
+        <option value="product">Product</option>
+    </select>
+    <label class="checkbox-label">
+        <input type="checkbox" name="remote" value="1" {% if remote %}checked{% endif %}>
+        Remote only
+    </label>
+    <button type="submit" class="btn btn-primary">Search</button>
+</form>
+</div>
+
+<div class="jobs-grid">
+    {% if jobs %}
+        {% for job in jobs %}
+        <a href="/jobs/{{ job.id }}" class="job-card">
+            <div class="job-card-header">
+                <h3>{{ job.title }}</h3>
+                <span class="category-badge">{{ job.category or 'General' }}</span>
+            </div>
+            <p class="company">{{ job.company }}</p>
+            <p class="location">{{ job.location }}</p>
+            {% if job.salary %}
+                <p class="salary">{{ job.salary }}</p>
+            {% endif %}
+            <p class="posted-by">Posted by {{ job.poster }}</p>
+        </a>
+        {% endfor %}
+    {% else %}
+        <p class="empty">No jobs found. {% if session.role == 'employer' %}<a href="/jobs/new">Post the first one!</a>{% endif %}</p>
+    {% endif %}
+</div>
+
+{% endblock %}
